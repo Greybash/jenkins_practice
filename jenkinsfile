@@ -44,7 +44,7 @@ pipeline{
     }}
             stage('Trigger Choice Job'){
                 steps{
-                    build job:'choice' , parameters: [string(name: 'CHOICE_PARAM', value: 'option1')]
+                    build job:'choice' , parameters: [string(name: 'CHOICE_PARAM', value: 'option3')]
                 }
             }
     
