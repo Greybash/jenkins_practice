@@ -1,0 +1,24 @@
+pipeline{
+    agent any
+    environment{
+        FLASK_APP = 'main.py'
+    }
+    parameters{
+        string(name: 'name', defaultValue:'environment name' , description: 'Enter the environment name')
+        booleanParam(name: 'deploy', defaultValue: false, description: 'Deploy to environment?') 
+    }
+    stages{
+        stage('Checkout Code'){
+        script{
+            if(params.deploy){
+                echo "Deploying to ${params.name} environment"
+                sh """  
+                git clone 
+                
+                """
+        }
+
+    }
+
+
+}
