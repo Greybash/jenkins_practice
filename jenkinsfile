@@ -23,8 +23,7 @@ pipeline{
                     sh """  
                     git clone https://github.com/Greybash/jenkins_practice.git
                     cd jenkins_practice
-                    /*apt update
-                    sudo apt install python3-pip -y*/
+                   
 
                     pip install -r requirements.txt
                     python ${env.FLASK_APP}
