@@ -8,6 +8,11 @@ pipeline{
         booleanParam(name: 'deploy', defaultValue: false, description: 'Deploy to environment?') 
     }
     stages{
+        stage('clear'){
+            steps{
+                deleteDir()
+            }
+        }
         stage('Checkout Code'){\
         steps{
             script{
