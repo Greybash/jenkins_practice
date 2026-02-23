@@ -13,9 +13,15 @@ pipeline{
             if(params.deploy){
                 echo "Deploying to ${params.name} environment"
                 sh """  
-                git clone 
+                git clone https://github.com/Greybash/jenkins_practice.git
+                cd jenkins_practice
+                pip install -r requirements.txt
+                python ${env.FLASK_APP}
                 
                 """
+        }
+        else {
+            echo "Not deploying to any environment"
         }
 
     }
