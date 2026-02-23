@@ -8,9 +8,10 @@ pipeline{
         booleanParam(name: 'deploy', defaultValue: false, description: 'Deploy to environment?') 
     }
     stages{
-        stage('Checkout Code'){
+        stage('Checkout Code'){\
+        steps{
             script{
-                steps{
+                
                 if(params.deploy){
                     
                     echo "Deploying to ${params.name} environment"
