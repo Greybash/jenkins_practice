@@ -13,7 +13,7 @@ pipeline{
                 deleteDir()
             }
         }
-        stage('Checkout Code'){\
+        stage('Checkout Code'){
         steps{
             script{
                 
@@ -41,4 +41,12 @@ pipeline{
     }
         
 
-    }}}}
+    }}
+            stage('Trigger Choice Job'){
+                steps{
+                    build job:'choice' , parameters: [string(name: 'CHOICE_PARAM', value: 'option1')]
+                }
+            }
+    
+    
+    }}
